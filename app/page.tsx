@@ -5,7 +5,7 @@ export default function Home() {
 
 
   return (
-    <main>
+    <main className={`bg-white h-[100vh] flex justify-center items-center`}>
       <Calculator />
     </main>
   )

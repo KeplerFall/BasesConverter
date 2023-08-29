@@ -19,31 +19,27 @@ export default function Calculator(){
         if(selectInput?.current?.value == "" || selectOutput?.current?.value == "") return;
         if(selectInput?.current?.value == selectOutput?.current?.value){output?.current?.setAttribute("value", input?.current?.value || ""); return;}
         output?.current?.setAttribute("value", matrix[parseInt(selectInput?.current?.value || "0") || 0][parseInt(selectOutput?.current?.value || "0") || 0](input?.current?.value || ""))
-
     }
+
     return(
-        <div className={`max-w-[800px] mx-auto`}>
+        <div className={`max-w-[800px] mx-auto bg-[#f0eedc] px-6 py-24 rounded-lg border border-black`}>
             <form action="" className={`grid grid-cols-3`} onSubmit={(event)=>{submitEvent(event)}}>
-                <div>
-                    <select ref={selectInput} name="inputSelect" id="inputSelect" className={`text-black`}>
+                    <select ref={selectInput} name="inputSelect" id="inputSelect" className={`text-black bg-white m-auto mb-6 p-1`}>
                         <option value="" className={`hidden`}>Select the base</option>
                         <option value="0">Decimal</option>
                         <option value="1">Hexadecimal</option>
                         <option value="2">Binary</option>
                     </select>
-                </div>
-                <p></p>
-                <div>
-                    <select ref={selectOutput} name="outputSelect" id="outputSelect" className={`text-black`}>
+                    <p></p>
+                    <select ref={selectOutput} name="outputSelect" id="outputSelect" className={`text-black bg-white m-auto mb-6 p-1`}>
                         <option value="" className={`hidden`}>Select the output</option>
                         <option value="0">Decimal</option>
                         <option value="1">Hexadecimal</option>
                         <option value="2">Binary</option>
                     </select>
-                </div>
-                <input type="text" ref={input} className={`text-black`}/>
-                <button>Calculate</button>
-                <input type="text" ref={output} className={`text-black`}/>
+                <input type="text" ref={input} className={`text-black border border-black rounded-lg`}/>
+                <button className={`bg-[#28a745] text-white rounded-lg w-fit m-auto p-3`}>Calculate</button>
+                <input type="text" ref={output} className={`text-black border border-black rounded-lg`}/>
             </form>
         </div>
     )

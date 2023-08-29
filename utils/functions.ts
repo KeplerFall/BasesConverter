@@ -108,5 +108,5 @@ export function hexToBinary(arg: string|number): string{
 
 export function binaryToHex(arg: string|number): string{
     const dec = binaryToDecimal(arg);
-    return decimalToBinary(dec)
+    return decimalToHex(dec)
 }

@@ -16,18 +16,8 @@ export default function Calculator(){
     
     const submitEvent = (event:FormEvent)=>{
         event.preventDefault();
-        console.log("First Step")
         if(selectInput?.current?.value == "" || selectOutput?.current?.value == "") return;
-        console.log("Second Step")
         if(selectInput?.current?.value == selectOutput?.current?.value){output?.current?.setAttribute("value", input?.current?.value || ""); return;}
-        console.log("Third Step")
-        console.log(`Values = `, {
-            Selected: selectInput?.current?.value,
-            OutputSelected: selectOutput?.current?.value,
-            Input: input?.current?.value
-        })
-        console.log(binaryToDecimal("1010"))
-        console.log(matrix[2][0]("1010"))
         output?.current?.setAttribute("value", matrix[parseInt(selectInput?.current?.value || "0") || 0][parseInt(selectOutput?.current?.value || "0") || 0](input?.current?.value || ""))
 
     }

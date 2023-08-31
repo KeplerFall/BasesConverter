@@ -46,7 +46,6 @@ export function hexToDecimal(arg: string|number): string{
 }
 
 export function decimalToBinary(arg: number|string): string{
-    console.log("Entrei no decimal To binary")
     if(typeof arg == "string"){arg.toLowerCase(); arg = parseInt(arg)}
     let binary = "";
 
